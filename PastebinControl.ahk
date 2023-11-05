@@ -1,8 +1,10 @@
 ﻿SingleInstance,Force
 !1::
-PasteID = 00000000 ; Set to PasteID Ex. https://pastebin.com/raw/PasteID
+BinID:= "https://pastebin.com/raw/" ; Bins Path to Raw Ex.If your bin host is Pastebin then BinID:= "https://pastebin.com/raw/"
+PasteID:= 00000000 ;  Ex. If your paste is at https://pastebin.com/raw/00000000 then PasteID:= 00000000
+RawPaste = % BinID PasteID
 FileDelete, %A_Temp%/%PasteID%
-Run, wget.exe --directory-prefix=%A_Temp%/ https://pastebin.com/raw/%PasteID%,, Hide
+Run, wget.exe --directory-prefix=%A_Temp%/ %RawPaste%,, Hide
 SwitchExist:
 IfNotExist, %A_Temp%/%PasteID%
 {

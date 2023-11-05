@@ -20,12 +20,12 @@ else
 	}
 	Else If (Switch = 2)
 	{
-		Goto, Disabled
+		Goto, Disable
 		return
 	}
 	else
 	{
-		Goto, Killed
+		Goto, Delete
 		return
 	}
 	sleep 500
@@ -38,10 +38,10 @@ Working:
 msgbox, normal working code.
 return
 
-Disabled:
+Disable:
 msgbox, code to disable script.
 return
 
-Killed:
+Delete:
 msgbox, code to delete the script.
 return
